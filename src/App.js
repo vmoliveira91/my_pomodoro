@@ -1,10 +1,23 @@
-import { useEffect, useState } from 'react'
+//import { useEffect, useState } from 'react'
+import { createGlobalStyle } from 'styled-components'
 
-import Button from './components/button'
-import Counter from './components/counter'
+import Container from './components/container'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    background-color: #F79489;
+  }
+`
 
 const App = () => {
-  const [minutes, setMinutes] = useState(0)
+  /*const [minutes, setMinutes] = useState(0)
   const [seconds, setSeconds] = useState(0)
   const [started, setStarted] = useState(false)
   const [paused, setPaused] = useState(false)
@@ -39,13 +52,12 @@ const App = () => {
 
       return () => clearInterval(id)
     }
-  }, [started])
+  }, [started])*/
 
   return (
-    <>      
-      <Counter minutes={minutes} seconds={seconds}/>
-      <Button text="Start" handleAction={handleStart}/>
-      <Button text="Pause" handleAction={handlePause}/>
+    <>
+      <GlobalStyle />
+      <Container />
     </>
   );
 }
